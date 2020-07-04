@@ -3,24 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auth Boilerplate</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Anime Scheduler</title>
 </head>
 <body>
     <header>
         <nav>
-            <% if (currentUser) { %>
-                <a href="/auth/logout">Logout</a>
-                <a href="/profile">Profile</a>
-            <% } else { %>
-                <a href="/auth/register">Register</a>
-                <a href="/auth/login">Login</a>
-            <% } %>
+
+            <section class="nav-top">
+                <article class="nav-top-left">
+                    <h1>Anime Scheduler</h1>
+                </article>
+                <article class="nav-top-left">
+                    <% if (currentUser) { %>
+                        <a href="/auth/logout">Logout</a>
+                        <h4><%= currentUser.name %></h4>
+                    <% } else { %>
+                        <a href="/auth/register">Register</a>
+                        <a href="/auth/login">Login</a>
+                    <% } %>
+                </article>
+            </section>
+
+            <section class="nav-bar">
+                <a href="/">Discover Anime</a>
+                <% if (currentUser) { %>
+                    <a href="/profile">My Schedule</a>
+                <% } %>
+            </section>
         </nav>
     </header>
-    <div class="container">
-        <h1>Authenticating Users</h1>
-        <%- include('./partials/alerts.ejs') %>
+    <main>
         <%- body %>
-    </div>
+    </main>
 </body>
 </html>

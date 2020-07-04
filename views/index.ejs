@@ -1,2 +1,92 @@
-<h2>Login or Register to Join Our Website</h2>
+<section class="sub-nav">
+    <section class="sub-nav-left">
+        <h2>Upcoming Anime</h2>
+    </section>
 
+    <section class="sub-nav-right">
+        <h4>Search By Season</h4>
+        <form action="/anime/season" method="GET">
+            <select name="year" id="year">
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+            </select>
+            <select name="season" id="season">
+                <option value="winter">Winter</option>
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+                <option value="fall">Fall</option>
+            </select>
+            <input type="submit" value="Search">
+        </form>
+    </section>
+</section>
+
+<h3 class="list-row-header">Mondays</h3>
+<section class="list-row">
+    <% monday.forEach(show => { %>
+        <article class="list-row-entry">
+            <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
+            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+        </article>
+    <% }) %>
+</section>
+
+<h3 class="list-row-header">Tuesdays</h3>
+<section class="list-row">
+    <% tuesday.forEach(show => { %>
+        <article class="list-row-entry">
+            <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
+            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+        </article>
+    <% }) %>
+</section>
+
+<h3 class="list-row-header">Wednesdays</h3>
+<section class="list-row">
+    <% wednesday.forEach(show => { %>
+        <article class="list-row-entry">
+            <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
+            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+        </article>
+    <% }) %>
+</section>
+
+<h3 class="list-row-header">Thursdays</h3>
+<section class="list-row">
+    <% thursday.forEach(show => { %>
+        <article class="list-row-entry">
+            <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
+            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+        </article>
+    <% }) %>
+</section>
+
+<h3 class="list-row-header">Fridays</h3>
+<section class="list-row">
+    <% friday.forEach(show => { %>
+        <article class="list-row-entry">
+            <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
+            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+        </article>
+    <% }) %>
+</section>
+
+<h3 class="list-row-header">Saturdays</h3>
+<section class="list-row">
+    <% saturday.forEach(show => { %>
+        <article class="list-row-entry">
+            <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
+            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+        </article>
+    <% }) %>
+</section>
+
+<h3 class="list-row-header">Sundays</h3>
+<section class="list-row">
+    <% sunday.forEach(show => { %>
+        <article class="list-row-entry">
+            <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
+            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+        </article>
+    <% }) %>
+</section>

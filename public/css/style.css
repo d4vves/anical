@@ -1,0 +1,63 @@
+main {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.nav-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-bar {
+    text-align: center;
+}
+
+.sub-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.list-row-entry {
+    flex: 0 0 auto;
+    margin: 0 2vw;
+    width: 15%;
+}
+
+.list-row-entry img {
+    width: 100%;
+}
+
+.profile-main-container {
+    display: flex;
+}
+
+.profile-info-container {
+    width: 15%;
+}
+
+.calendar-container {
+    width: 85%;
+    border: 2px solid black;
+    display: flex;
+}
+
+.calendar-column {
+    width: 14.25%
+}
+
+.calendar-column img {
+    max-width: 100%;
+}
+
+.calendar-column-item {
+    border: 1px solid black;
+}

@@ -9,6 +9,7 @@ const passport = require('./config/ppConfig')
 const db = require('./models')
 const isLoggedIn = require('./middleware/isLoggedIn')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
+const axios = require('axios')
 
 /*----- app Setup -----*/
 const app = Express()
@@ -45,8 +46,21 @@ app.use((req, res, next) => {
 
 /*----- Routes -----*/
 app.get('/', (req, res) => {
-    // check to see if user is logged in
-    res.render('index')
+    axios.get('http://api.jikan.moe/v3/schedule')
+    .then((response) => {
+        let resData = response.data
+        res.render('index', {
+            monday: resData.monday,
+            tuesday: resData.tuesday,
+            wednesday: resData.wednesday,
+            thursday: resData.thursday,
+            friday: resData.friday,
+            saturday: resData.saturday,
+            sunday: resData.sunday
+        })
+    }).catch(err => {
+        console.log(`🚦 ${err} 🚦`)
+    })
 })
 
 app.get('/profile', isLoggedIn, (req, res) => {
@@ -55,6 +69,8 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 /*----- Controllers -----*/
 app.use('/auth', require('./controllers/auth'))
+app.use('/anime', require('./controllers/anime'))
+app.use('/profile', require('./controllers/profile'))
 
 /*----- Initialize app on Port -----*/
 app.listen(process.env.PORT || 3000, () => {

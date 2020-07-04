@@ -1,0 +1,22 @@
+<h3><%= name %></h3>
+<h4><%= engTitle %></h4>
+<img src="<%= image %>" alt="<%= name %> art.">
+<% if (!airing) { %>
+    <p><%= airs %></p>
+<% } %>
+<p>Source: <%= source %></p>
+<p><%= synopsis %></p>
+
+<% if (currentUser) { %>
+    <form method="POST" action="/anime/<%= malId %>">
+        <input hidden type="text" name="name" value="<%= name %>">
+        <input hidden type="text" name="date" value="<%= airs %>">
+        <input hidden type="text" name="imageurl" value="<%= image %>">
+        <input hidden type="number" name="malId" value="<%= malId %>">
+        <input type="submit" value="Add Show">
+    </form>
+    
+    <form method="POST" action="/anime/<%= malId %>/?_method=DELETE">
+        <input type="submit" value="Remove">
+    </form>
+<% } %>
