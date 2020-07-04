@@ -62,8 +62,33 @@ router.post('/:id', (req, res) => {
         }).then(([anime, created]) => {
             user.addAnime(anime)
             .then(res.redirect('/profile'))
+        }).catch(err => {
+            console.log(`🚦 ${err} 🚦`)
         })
+    }).catch(err => {
+        console.log(`🚦 ${err} 🚦`)
     })
 })
+
+// router.delete('/:id', (req, res) => {
+//     db.user.findOne({
+//         where: {
+//             id:req.user.id
+//         }
+//     }).then(user => {
+//         db.anime.findOne({
+//             where: {
+//                 malId: req.params.id
+//             }
+//         }).then(anime => {
+//             //delete join???
+//             .then(res.redirect('/profile'))
+//         }).catch(err => {
+//             console.log(`🚦 ${err} 🚦`)
+//         })
+//     }).catch(err => {
+//         console.log(`🚦 ${err} 🚦`)
+//     })
+// })
 
 module.exports = router
