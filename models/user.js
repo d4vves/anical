@@ -27,6 +27,9 @@ module.exports = function(sequelize, DataTypes) {
                     msg: 'Password is of incorrect length. Double check character number.'
                 }
             }
+        },
+        imageurl: {
+            type: DataTypes.STRING
         }
     }, {
         hooks: {

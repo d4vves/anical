@@ -1,6 +1,6 @@
 {
   "development": {
-    "database": "project2-express",
+    "database": "anime_scheduler",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
