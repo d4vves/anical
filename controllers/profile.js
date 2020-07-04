@@ -4,13 +4,12 @@ const isLoggedIn = require('../middleware/isLoggedIn')
 const db = require('../models')
 
 router.get('/', isLoggedIn, (req, res) => {
-    db.anime.findAll({
+    db.user.findOne({
         where: {
-            userId: req.user.id
-        },
-        include: [db.user]
-    }).then(anime => {
-        res.render('profile', { anime })
+            id: req.user.id
+        }
+    }).then(user => {
+        user.getAnimes().then(animes => {res.render('profile', { animes })})
     })
 })
 

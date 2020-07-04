@@ -1,1 +1,99 @@
-<h2>Hi <%= currentUser.name %>!!!!</h2>
+<section class="profile-main-container">
+    <section class="profile-info-container">
+        <h4><%= currentUser.name %></h4>
+        <p>Scheduling Since: <%= currentUser.createdAt.toString().slice(0, 10) %></p>
+    </section>
+    <p></p>
+    <section class="calendar-container">
+        <section class="calendar-column">
+            <h3>MON</h3>
+            <% animes.forEach(anime => { %>
+                <% if (anime.date.includes('Monday')) { %>
+                    <article class="calendar-column-item">
+                        <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
+                        <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
+                        <p><%= anime.date %></p>
+                    </article>
+                <% } %>
+            <% }) %>
+        </section>
+    
+        <section class="calendar-column">
+            <h3>TUE</h3>
+            <% animes.forEach(anime => { %>
+                <% if (anime.date.includes('Tuesday')) { %>
+                    <article class="calendar-column-item">
+                        <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
+                        <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
+                        <p><%= anime.date %></p>
+                    </article>
+                <% } %>
+            <% }) %>
+        </section>
+    
+        <section class="calendar-column">
+            <h3>WED</h3>
+            <% animes.forEach(anime => { %>
+                <% if (anime.date.includes('Wednesday')) { %>
+                    <article class="calendar-column-item">
+                        <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
+                        <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
+                        <p><%= anime.date %></p>
+                    </article>
+                <% } %>
+            <% }) %>
+        </section>
+    
+        <section class="calendar-column">
+            <h3>THU</h3>
+            <% animes.forEach(anime => { %>
+                <% if (anime.date.includes('Thursday')) { %>
+                    <article class="calendar-column-item">
+                        <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
+                        <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
+                        <p><%= anime.date %></p>
+                    </article>
+                <% } %>
+            <% }) %>
+        </section>
+    
+        <section class="calendar-column">
+            <h3>FRI</h3>
+            <% animes.forEach(anime => { %>
+                <% if (anime.date.includes('Friday')) { %>
+                    <article class="calendar-column-item">
+                        <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
+                        <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
+                        <p><%= anime.date %></p>
+                    </article>
+                <% } %>
+            <% }) %>
+        </section>
+    
+        <section class="calendar-column">
+            <h3>SAT</h3>
+            <% animes.forEach(anime => { %>
+                <% if (anime.date.includes('Saturday')) { %>
+                    <article class="calendar-column-item">
+                        <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
+                        <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
+                        <p><%= anime.date %></p>
+                    </article>
+                <% } %>
+            <% }) %>
+        </section>
+    
+        <section class="calendar-column">
+            <h3>SUN</h3>
+            <% animes.forEach(anime => { %>
+                <% if (anime.date.includes('Sunday')) { %>
+                    <article class="calendar-column-item">
+                        <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
+                        <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
+                        <p><%= anime.date %></p>
+                    </article>
+                <% } %>
+            <% }) %>
+        </section>
+    </section>
+</section>

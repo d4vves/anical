@@ -43,4 +43,27 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.post('/:id', (req, res) => {
+    db.user.findOne({
+        where: {
+            id: req.user.id
+        }
+    }).then(user => {
+        db.anime.findOrCreate({
+            where: {
+                malId: req.body.malId
+            },
+            defaults: {
+                name: req.body.name,
+                date: req.body.date,
+                imageurl: req.body.imageurl,
+                userId: req.user.id
+            }
+        }).then(([anime, created]) => {
+            user.addAnime(anime)
+            .then(res.redirect('/profile'))
+        })
+    })
+})
+
 module.exports = router

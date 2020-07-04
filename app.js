@@ -63,10 +63,6 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/profile', isLoggedIn, (req, res) => {
-    res.render('profile')
-})
-
 /*----- Controllers -----*/
 app.use('/auth', require('./controllers/auth'))
 app.use('/anime', require('./controllers/anime'))
