@@ -70,25 +70,28 @@ router.post('/:id', (req, res) => {
     })
 })
 
-// router.delete('/:id', (req, res) => {
-//     db.user.findOne({
-//         where: {
-//             id:req.user.id
-//         }
-//     }).then(user => {
-//         db.anime.findOne({
-//             where: {
-//                 malId: req.params.id
-//             }
-//         }).then(anime => {
-//             //delete join???
-//             .then(res.redirect('/profile'))
-//         }).catch(err => {
-//             console.log(`🚦 ${err} 🚦`)
-//         })
-//     }).catch(err => {
-//         console.log(`🚦 ${err} 🚦`)
-//     })
-// })
+router.delete('/:id', (req, res) => {
+    db.user.findOne({
+        where: {
+            id:req.user.id
+        }
+    }).then(user => {
+        db.anime.findOne({
+            where: {
+                malId: req.params.id
+            }
+        }).then(anime => {
+            db.usersAnimes.findOne({
+                where: {
+                    userId: user.id,
+                    animeId: anime.id
+                }
+            }).then(entry => {
+                entry.destroy()
+                res.redirect('/profile')
+            })
+        })
+    })
+})
 
 module.exports = router
