@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Anime Scheduler</title>
+    <title>Ani Cal</title>
 </head>
 <body>
     <header>
         <nav>
             <section class="nav-top">
                 <article class="nav-top-left">
-                    <h1>Anime Scheduler</h1>
+                    <h1>ANI CAL</h1>
                 </article>
-                <section class="nav-top-center">
-                    <a href="/">Discover Anime</a>
+                <article class="nav-top-right">
                     <% if (currentUser) { %>
-                        <a href="/profile">My Schedule</a>
-                    <% } %>
-                </section>
-                <article class="nav-top-left">
-                    <% if (currentUser) { %>
-                        <a href="/auth/logout">Logout</a>
-                        <h4><%= currentUser.name %></h4>
+                        <a href="/">DISCOVER</a>
+                        <a href="/profile">MY CAL</a>
+                        <a href="/auth/logout">LOGOUT</a>
                     <% } else { %>
-                        <a href="/auth/register">Register</a>
-                        <a href="/auth/login">Login</a>
+                        <a href="/auth/register">REGISTER</a>
+                        <a href="/auth/login">LOGIN</a>
                     <% } %>
                 </article>
             </section>
