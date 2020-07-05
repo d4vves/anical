@@ -28,15 +28,28 @@ router.get('/:id', (req, res) => {
     axios.get(`https://api.jikan.moe/v3/anime/${req.params.id}`)
     .then((response) => {
         let resData = response.data
-        res.render('anime/show', {
-            name: resData.title,
-            image: resData.image_url,
-            airs: resData.broadcast,
-            synopsis: resData.synopsis,
-            engTitle: resData.title_english,
-            malId: resData.mal_id,
-            source: resData.source,
-            airing: resData.aired.to
+        db.user.findOne({
+            where: {
+                id: req.user.id
+            }
+        }).then(user => {
+            user.getAnimes({
+                where: {
+                    malId: req.params.id
+                }
+            }).then(animes => {
+                res.render('anime/show', {
+                    name: resData.title,
+                    image: resData.image_url,
+                    airs: resData.broadcast,
+                    synopsis: resData.synopsis,
+                    engTitle: resData.title_english,
+                    malId: resData.mal_id,
+                    source: resData.source,
+                    airing: resData.aired.to,
+                    animes
+                })
+            })
         })
     }).catch(err => {
         console.log(`🚦 ${err} 🚦`)
@@ -73,7 +86,7 @@ router.post('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     db.user.findOne({
         where: {
-            id:req.user.id
+            id: req.user.id
         }
     }).then(user => {
         db.anime.findOne({
@@ -89,8 +102,14 @@ router.delete('/:id', (req, res) => {
             }).then(entry => {
                 entry.destroy()
                 res.redirect('/profile')
+            }).catch(err => {
+                console.log(`🚦 ${err} 🚦`)
             })
+        }).catch(err => {
+            console.log(`🚦 ${err} 🚦`)
         })
+    }).catch(err => {
+        console.log(`🚦 ${err} 🚦`)
     })
 })
 

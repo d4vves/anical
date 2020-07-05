@@ -1,7 +1,7 @@
 <h3><%= season %> <%= year %></h3>
 
 <% anime.forEach(anime => { %>
-    <p><%= anime.title %></p>
+    <h4><%= anime.title %></h4>
     <img src="<%= anime.image_url %>" alt="<%= anime.title %> art.">
     <p><%= anime.synopsis.slice(0, 144) %>... <a href="/anime/<%= anime.mal_id %>">Read More</a></p>
 <% }) %>

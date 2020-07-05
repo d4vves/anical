@@ -6,10 +6,7 @@ main {
 .nav-top {
     display: flex;
     justify-content: space-between;
-}
-
-.nav-bar {
-    text-align: center;
+    align-items: center;
 }
 
 .sub-nav {

@@ -9,7 +9,10 @@ router.get('/', isLoggedIn, (req, res) => {
             id: req.user.id
         }
     }).then(user => {
-        user.getAnimes().then(animes => {res.render('profile', { animes })})
+        user.getAnimes().then(animes => {
+            console.log(animes)
+            res.render('profile', { animes })
+        })
     })
 })
 

@@ -9,11 +9,16 @@
 <body>
     <header>
         <nav>
-
             <section class="nav-top">
                 <article class="nav-top-left">
                     <h1>Anime Scheduler</h1>
                 </article>
+                <section class="nav-top-center">
+                    <a href="/">Discover Anime</a>
+                    <% if (currentUser) { %>
+                        <a href="/profile">My Schedule</a>
+                    <% } %>
+                </section>
                 <article class="nav-top-left">
                     <% if (currentUser) { %>
                         <a href="/auth/logout">Logout</a>
@@ -23,13 +28,6 @@
                         <a href="/auth/login">Login</a>
                     <% } %>
                 </article>
-            </section>
-
-            <section class="nav-bar">
-                <a href="/">Discover Anime</a>
-                <% if (currentUser) { %>
-                    <a href="/profile">My Schedule</a>
-                <% } %>
             </section>
         </nav>
     </header>
