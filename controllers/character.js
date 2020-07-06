@@ -20,12 +20,7 @@ router.post('/', (req, res) => {
             where: {
                 id: req.body.promptId
             }
-        }).then(prompt => {
-            console.log(`🤡 ${prompt} 🤡`)
-            res.redirect('/profile')
-        }).catch(err => {
-            console.log(`🚦 ${err} 🚦`)
-        })
+        }).then(res.redirect('/profile'))
     }).catch(err => {
         console.log(`🚦 ${err} 🚦`)
     })

@@ -56,6 +56,24 @@ a {
     width: 100%;
 }
 
+.prompt-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.prompt-item {
+    height: 75%;
+    flex-basis: 25%;
+    text-align: center;
+    padding: 0 2vw
+}
+
+.prompt-image {
+    height: 10vh;
+}
+
 .calendar-container {
     border: 2px solid black;
     display: flex;

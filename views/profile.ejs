@@ -1,19 +1,26 @@
 <section class="profile-info-container">
     <h4><%= currentUser.name %></h4>
     <p>Scheduling Since: <%= currentUser.createdAt.toString().slice(0, 10) %></p>
-    <% prompts.forEach(prompt => { %>
-        <p><%= prompt.text %></p>
-        <% if (!prompt.characterId) { %>
-            <form method="GET" action="/character/search">
-                <input type="text" name="name">
-                <input hidden type="text" name="promptId" value="<%= prompt.id %>">
-                <input type="submit" value="Search">
-            </form>
-        <% } else { %>
-            <img src="<%= prompt.character.imageurl %>" alt="<%= prompt.character.name %>">
-            <p><%= prompt.character.name %></p>
-        <% } %>
-    <% }) %>
+    <section class="prompt-container">
+        <% prompts.forEach(prompt => { %>
+            <section class="prompt-item">
+                <p><%= prompt.text %>...</p>
+            <% if (!prompt.characterId) { %>
+                <form method="GET" action="/character/search">
+                    <input type="text" name="name">
+                    <input hidden type="text" name="promptId" value="<%= prompt.id %>">
+                    <input type="submit" value="Search">
+                </form>
+            <% } else { %>
+                <img class="prompt-image" src="<%= prompt.character.imageurl %>" alt="<%= prompt.character.name %>">
+                <p><%= prompt.character.name %></p>
+                <form method="" action="">
+                    <input type="submit" value="Remove">
+                </form>
+            <% } %>
+            </section>
+        <% }) %>
+    </section>
     <form method="POST" action="/prompt">
         <select name="text" id="text">
             <option default>Select a prompt</option>
@@ -34,7 +41,6 @@
             <% if (anime.date.includes('Monday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
                     <p><%= anime.date %></p>
                 </article>
             <% } %>
@@ -47,7 +53,6 @@
             <% if (anime.date.includes('Tuesday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
                     <p><%= anime.date %></p>
                 </article>
             <% } %>
@@ -60,7 +65,6 @@
             <% if (anime.date.includes('Wednesday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
                     <p><%= anime.date %></p>
                 </article>
             <% } %>
@@ -73,7 +77,6 @@
             <% if (anime.date.includes('Thursday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
                     <p><%= anime.date %></p>
                 </article>
             <% } %>
@@ -86,7 +89,6 @@
             <% if (anime.date.includes('Friday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
                     <p><%= anime.date %></p>
                 </article>
             <% } %>
@@ -99,7 +101,6 @@
             <% if (anime.date.includes('Saturday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
                     <p><%= anime.date %></p>
                 </article>
             <% } %>
@@ -112,7 +113,6 @@
             <% if (anime.date.includes('Sunday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <img src="<%= anime.imageurl %>" alt="<%= anime.name %> art">
                     <p><%= anime.date %></p>
                 </article>
             <% } %>
