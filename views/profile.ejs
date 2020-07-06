@@ -14,8 +14,8 @@
             <% } else { %>
                 <img class="prompt-image" src="<%= prompt.character.imageurl %>" alt="<%= prompt.character.name %>">
                 <p><%= prompt.character.name %></p>
-                <form method="" action="">
-                    <input type="submit" value="Remove">
+                <form method="POST" action="/prompt/<%= prompt.id %>/?_method=DELETE">
+                    <input type="submit" value="Remove Prompt">
                 </form>
             <% } %>
             </section>
