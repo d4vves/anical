@@ -9,6 +9,9 @@
                 <input hidden type="text" name="promptId" value="<%= prompt.id %>">
                 <input type="submit" value="Search">
             </form>
+        <% } else { %>
+            <img src="<%= prompt.character.imageurl %>" alt="<%= prompt.character.name %>">
+            <p><%= prompt.character.name %></p>
         <% } %>
     <% }) %>
     <form method="POST" action="/prompt">

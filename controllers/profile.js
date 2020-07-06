@@ -7,19 +7,13 @@ router.get('/', isLoggedIn, (req, res) => {
     db.user.findOne({
         where: {
             id: req.user.id
-        },
-        include: [db.prompt]
+        }
     }).then(user => {
         user.getAnimes().then(animes => {
-            res.render('profile', {
-                animes,
-                prompts: user.prompts
+            user.getPrompts({include: [db.character]}).then(prompts => {
+                res.render('profile', { animes, prompts })
             })
-        }).catch(err => {
-            console.log(`🚦 ${err} 🚦`)
         })
-    }).catch(err => {
-        console.log(`🚦 ${err} 🚦`)
     })
 })
 

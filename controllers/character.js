@@ -13,14 +13,30 @@ router.post('/', (req, res) => {
         defaults: {
             imageurl: req.body.imageurl
         }
-    }).then(res.redirect('/profile'))
+    }).then(([character, created]) => {
+        db.prompt.update({
+            characterId: character.id
+        }, {
+            where: {
+                id: req.body.promptId
+            }
+        }).then(prompt => {
+            console.log(`🤡 ${prompt} 🤡`)
+            res.redirect('/profile')
+        }).catch(err => {
+            console.log(`🚦 ${err} 🚦`)
+        })
+    }).catch(err => {
+        console.log(`🚦 ${err} 🚦`)
+    })
 })
 
 router.get('/search', (req, res) => {
     axios.get(`https://api.jikan.moe/v3/search/character?q=${req.query.name}`)
     .then(response => {
+        let promptId = req.query.promptId
         let characters = response.data.results
-        res.render('character/characters', { characters })
+        res.render('character/characters', { characters, promptId })
     }).catch(err => {
         console.log(`🚦 ${err} 🚦`)
     })
