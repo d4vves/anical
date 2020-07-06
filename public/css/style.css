@@ -72,3 +72,8 @@ a {
 .calendar-column-item {
     border: 1px solid black;
 }
+
+.character-container {
+    display: flex;
+    flex-wrap: wrap;
+}

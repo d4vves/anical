@@ -1,4 +1,13 @@
-<% characters.forEach(character => { %>
-    <img src="<%= character.image_url %>" alt="<%= character.name %>">
-    <h4><%= character.name %></h4>
-<% }) %>
+<section class="character-container">
+    <% characters.forEach(character => { %>
+        <section class="character-item">
+            <img src="<%= character.image_url %>" alt="<%= character.name %>">
+        <h4><%= character.name %></h4>
+        <form method="POST" action="/character">
+            <input hidden type="text" name="name" value="<%= character.name %>">
+            <input hidden type="text" name="imageurl" value="<%= character.image_url %>">
+            <input type="submit" value="Add character">
+        </form>
+        </section>
+    <% }) %>
+</section>

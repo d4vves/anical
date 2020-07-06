@@ -6,6 +6,7 @@
         <% if (!prompt.characterId) { %>
             <form method="GET" action="/character/search">
                 <input type="text" name="name">
+                <input hidden type="text" name="promptId" value="<%= prompt.id %>">
                 <input type="submit" value="Search">
             </form>
         <% } %>
