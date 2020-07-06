@@ -12,14 +12,14 @@ router.get('/season', (req,res) => {
     } else {
         axios.get(`https://api.jikan.moe/v3/season/${req.query.year}/${req.query.season}`)
         .then((response) => {
-        let resData = response.data
-        res.render('anime/season', {
-            season: resData.season_name,
-            year: resData.season_year,
-            anime: resData.anime
-        })
+            let resData = response.data
+            res.render('anime/season', {
+                season: resData.season_name,
+                year: resData.season_year,
+                anime: resData.anime
+            })
         }).catch(err => {
-        console.log(`🚦 ${err} 🚦`)
+            console.log(`🚦 ${err} 🚦`)
         })
     }
 })
@@ -49,7 +49,11 @@ router.get('/:id', (req, res) => {
                     airing: resData.aired.to,
                     animes
                 })
+            }).catch(err => {
+                console.log(`🚦 ${err} 🚦`)
             })
+        }).catch(err => {
+            console.log(`🚦 ${err} 🚦`)
         })
     }).catch(err => {
         console.log(`🚦 ${err} 🚦`)

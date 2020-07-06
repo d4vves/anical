@@ -24,8 +24,12 @@ a {
 .nav-top-right {
     width: 30%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex-wrap: wrap;
+}
+
+.nav-top-right a {
+    padding-left: 5vw;
 }
 
 .sub-nav {
