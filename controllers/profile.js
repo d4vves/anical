@@ -11,7 +11,21 @@ router.get('/', isLoggedIn, (req, res) => {
     }).then(user => {
         user.getAnimes().then(animes => {
             user.getPrompts({include: [db.character]}).then(prompts => {
-                res.render('profile', { animes, prompts })
+                res.render('profile/profile', { animes, prompts })
+            })
+        })
+    })
+})
+
+router.get('/edit', isLoggedIn, (req, res) => {
+    db.user.findOne({
+        where: {
+            id: req.user.id
+        }
+    }).then(user => {
+        user.getAnimes().then(animes => {
+            user.getPrompts({include: [db.character]}).then(prompts => {
+                res.render('profile/edit', { animes, prompts })
             })
         })
     })

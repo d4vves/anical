@@ -74,6 +74,10 @@ a {
     margin: 0;
 }
 
+.sub-nav a {
+    color: #ffffff;
+}
+
 .sub-nav-left {
     margin-left: 1vw;
 }
@@ -164,26 +168,50 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: flex-end;
 }
 
 .prompt-item {
     height: 75%;
-    flex-basis: 25%;
+    flex-basis: 20%;
     text-align: center;
-    padding: 0 2vw
+    padding: 0 2vw;
+    font-size: 0.9em;
+}
+
+.prompt-item p {
+    font-style: italic;
+}
+
+.prompt-item h4 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    background-color: #fb4d3d;
+    color: #ffffff;
+    margin: 0;
 }
 
 .prompt-image {
-    height: 10vh;
+    height: 15vh;
 }
 
 .calendar-container {
     border: 2px solid black;
+    border-radius: 2em;
     display: flex;
 }
 
 .calendar-column {
-    width: 14.25%
+    width: 14.25%;
+    border-right: 1px solid black;
+}
+
+.calendar-column:nth-child(7) {
+    border-right: 1px solid transparent
+}
+
+.calendar-column h3 {
+    text-align: center;
 }
 
 .calendar-column img {
@@ -191,7 +219,11 @@ a {
 }
 
 .calendar-column-item {
-    border: 1px solid black;
+    padding: 1vh;
+}
+
+.calendar-column-item p {
+    margin: 0;
 }
 
 .character-container {
@@ -203,4 +235,15 @@ form p {
     margin: 0;
     font-size: 0.9em;
     padding-top: 1vh;
+}
+
+footer {
+    background-color: #fb4d3d;
+    color: #ffffff;
+    height: 10vh;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
 }

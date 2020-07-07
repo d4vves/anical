@@ -10,7 +10,7 @@ router.post('/', (req, res) => {
     .then(user => {
         user.createPrompt({
             text: req.body.text
-        }).then(res.redirect('/profile'))
+        }).then(res.redirect('/profile/edit'))
     }).catch(err => {
         console.log(`🚦 ${err} 🚦`)
     })
@@ -21,7 +21,7 @@ router.delete('/:id', (req, res) => {
         where: {
             id: req.params.id
         }
-    }).then(res.redirect('/profile'))
+    }).then(res.redirect('/profile/edit'))
 })
 
 module.exports = router
