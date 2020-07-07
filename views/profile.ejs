@@ -1,6 +1,11 @@
+<section class="sub-nav">
+    <section class="sub-nav-left">
+        <h4><%= currentUser.name %></h4>
+        <p>Scheduling Since: <%= currentUser.createdAt.toString().slice(0, 10) %></p>
+    </section>
+</section>
+
 <section class="profile-info-container">
-    <h4><%= currentUser.name %></h4>
-    <p>Scheduling Since: <%= currentUser.createdAt.toString().slice(0, 10) %></p>
     <section class="prompt-container">
         <% prompts.forEach(prompt => { %>
             <section class="prompt-item">
