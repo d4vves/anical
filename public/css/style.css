@@ -11,11 +11,11 @@ select, input {
 
 a {
     text-decoration: none;
-    color: #000000;
+    color: #fb4d3d;
 }
 
-.red {
-    color: #fb4d3d;
+.black {
+    color: #000000;
 }
 
 .nav-top {
@@ -112,7 +112,7 @@ a {
     width: 100%;
 }
 
-.list-row-entry p {
+.title-label {
     margin-top: 0;
     padding: 1vh 0;
     background-color: #fb4d3d;
@@ -125,6 +125,38 @@ a {
 .list-row-entry a {
     color: #ffffff;
     font-weight: 700;
+}
+
+.season-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.season-entry {
+    width: 20vw;
+}
+
+.season-title {
+    margin-top: 0;
+    padding: 1vh 0;
+    background-color: #fb4d3d;
+    bottom: 4px;
+    position: relative;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+}
+
+.season-entry img {
+    width: 100%;
+}
+
+.season-entry h4 {
+    background-color: #fb4d3d;
+    margin: 0;
+    height: 5vh;
 }
 
 .prompt-container {

@@ -26,7 +26,7 @@
     <% monday.forEach(show => { %>
         <article class="list-row-entry">
             <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
-            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+            <p class="title-label"><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
         </article>
     <% }) %>
 </section>
