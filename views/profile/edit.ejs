@@ -9,26 +9,6 @@
 </section>
 
 <section class="profile-info-container">
-    <section class="prompt-container">
-        <% prompts.forEach(prompt => { %>
-            <section class="prompt-item">
-                <p><%= prompt.text %>...</p>
-            <% if (!prompt.characterId) { %>
-                <form method="GET" action="/character/search">
-                    <input type="text" name="name">
-                    <input hidden type="text" name="promptId" value="<%= prompt.id %>">
-                    <input type="submit" value="Add Character">
-                </form>
-            <% } else { %>
-                <img class="prompt-image" src="<%= prompt.character.imageurl %>" alt="<%= prompt.character.name %>">
-                <p><%= prompt.character.name %></p>
-                <form method="POST" action="/prompt/<%= prompt.id %>/?_method=DELETE">
-                    <input type="submit" value="Remove Prompt">
-                </form>
-            <% } %>
-            </section>
-        <% }) %>
-    </section>
     <form method="POST" action="/prompt">
         <select name="text" id="text">
             <option default>Select a prompt</option>
@@ -42,6 +22,29 @@
         </select>
         <input type="submit" value="Add prompt">
     </form>
+    <section class="prompt-container">
+        <% prompts.forEach(prompt => { %>
+            <section class="prompt-item">
+                <p><%= prompt.text %>...</p>
+            <% if (!prompt.characterId) { %>
+                <form method="GET" action="/character/search">
+                    <input type="text" name="name">
+                    <input hidden type="text" name="promptId" value="<%= prompt.id %>">
+                    <input type="submit" value="Add Character">
+                </form>
+                <form method="POST" action="/prompt/<%= prompt.id %>/?_method=DELETE">
+                    <input type="submit" value="Remove Prompt">
+                </form>
+            <% } else { %>
+                <img class="prompt-image" src="<%= prompt.character.imageurl %>" alt="<%= prompt.character.name %>">
+                <p><%= prompt.character.name %></p>
+                <form method="POST" action="/prompt/<%= prompt.id %>/?_method=DELETE">
+                    <input type="submit" value="Remove Prompt">
+                </form>
+            <% } %>
+            </section>
+        <% }) %>
+    </section>
 </section>
 <h3>My Cal</h3>
 <section class="calendar-container">

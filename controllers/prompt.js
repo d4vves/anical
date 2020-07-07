@@ -22,6 +22,9 @@ router.delete('/:id', (req, res) => {
             id: req.params.id
         }
     }).then(res.redirect('/profile/edit'))
+    .catch(err => {
+        console.log(`🚦 ${err} 🚦`)
+    })
 })
 
 module.exports = router

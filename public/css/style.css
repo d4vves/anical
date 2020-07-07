@@ -7,6 +7,10 @@ body {
 select, input {
     font-family: 'Roboto Condensed', sans-serif;
     margin: 1vh 0;
+    border: 2px solid #fb4d3d;
+    background-color: #ffffff;
+    color: #fb4d3d;
+    font-weight: 700;
 }
 
 a {
@@ -52,7 +56,7 @@ a {
 .nav-top-right a:hover {
     background-color: #ffffff;
     border: 2px solid #fb4d3d;
-    color: #000000;
+    color: #fb4d3d;
 }
 
 .sub-nav {

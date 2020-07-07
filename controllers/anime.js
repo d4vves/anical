@@ -28,6 +28,7 @@ router.get('/:id', (req, res) => {
     axios.get(`https://api.jikan.moe/v3/anime/${req.params.id}`)
     .then((response) => {
         let resData = response.data
+        let backUrl = req.header('Referer')
         db.user.findOne({
             where: {
                 id: req.user.id
@@ -47,7 +48,8 @@ router.get('/:id', (req, res) => {
                     malId: resData.mal_id,
                     source: resData.source,
                     airing: resData.aired.to,
-                    animes
+                    animes,
+                    backUrl
                 })
             }).catch(err => {
                 console.log(`🚦 ${err} 🚦`)
