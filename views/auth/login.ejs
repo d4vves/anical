@@ -5,14 +5,10 @@
 </section>
 
 <form action="/auth/login" method="POST">
-    <div class="form-group">
-        <p>EMAIL</p>
-        <input id="authEmail" class="form-control" type="email" name="email">
-    </div>
-    <div class="form-group">
-        <p>PASSWORD</p>
-        <input id="authPassword" class="form-control" type="password" name="password">
-    </div>
+    <p>EMAIL</p>
+    <input id="authEmail" class="black" type="email" name="email">
+    <p>PASSWORD</p>
+    <input id="authPassword" class="black" type="password" name="password">
     <input class="btn" type="submit">
     <%- include('../partials/alerts') %>
 </form>
