@@ -1,8 +1,14 @@
-<section class="character-container">
+<section class="sub-nav">
+    <section class="sub-nav-left">
+        <h3>Add Character</h3>
+    </section>
+</section>
+
+<section class="list-container">
     <% characters.forEach(character => { %>
-        <section class="character-item">
+        <section class="list-entry">
             <img src="<%= character.image_url %>" alt="<%= character.name %>">
-        <h4><%= character.name %></h4>
+        <h4 class="list-title"><%= character.name %></h4>
         <form method="POST" action="/character">
             <input hidden type="text" name="name" value="<%= character.name %>">
             <input hidden type="text" name="imageurl" value="<%= character.image_url %>">

@@ -1,6 +1,15 @@
-<h3><%= name %></h3>
-<h4><%= engTitle %></h4>
-<img src="<%= image %>" alt="<%= name %> art.">
+<section class="sub-nav">
+    <section class="sub-nav-left">
+        <h3><%= name %></h3>
+        <p><%= engTitle %></p>
+    </section>
+    <section class="sub-nav-right">
+        <p>back to results</p>
+    </section>
+</section>
+
+<section class="show-container">
+    <img src="<%= image %>" alt="<%= name %> art.">
 <% if (!airing) { %>
     <p><%= airs %></p>
 <% } %>
@@ -18,7 +27,8 @@
         </form>
     <% } else { %>
         <form method="POST" action="/anime/<%= malId %>/?_method=DELETE">
-            <input type="submit" value="Remove">
+            <input type="submit" value="Remove Show">
         </form>
     <% } %>
 <% } %>
+</section>

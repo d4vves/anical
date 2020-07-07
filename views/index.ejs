@@ -1,6 +1,6 @@
 <section class="sub-nav">
     <section class="sub-nav-left">
-        <h2>Upcoming Anime</h2>
+        <h3>Upcoming Anime</h3>
     </section>
 
     <section class="sub-nav-right">
@@ -36,7 +36,7 @@
     <% tuesday.forEach(show => { %>
         <article class="list-row-entry">
             <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
-            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+            <p class="title-label"><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
         </article>
     <% }) %>
 </section>
@@ -46,7 +46,7 @@
     <% wednesday.forEach(show => { %>
         <article class="list-row-entry">
             <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
-            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+            <p class="title-label"><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
         </article>
     <% }) %>
 </section>
@@ -56,7 +56,7 @@
     <% thursday.forEach(show => { %>
         <article class="list-row-entry">
             <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
-            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+            <p class="title-label"><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
         </article>
     <% }) %>
 </section>
@@ -66,7 +66,7 @@
     <% friday.forEach(show => { %>
         <article class="list-row-entry">
             <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
-            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+            <p class="title-label"><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
         </article>
     <% }) %>
 </section>
@@ -76,7 +76,7 @@
     <% saturday.forEach(show => { %>
         <article class="list-row-entry">
             <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
-            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+            <p class="title-label"><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
         </article>
     <% }) %>
 </section>
@@ -86,7 +86,7 @@
     <% sunday.forEach(show => { %>
         <article class="list-row-entry">
             <img src="<%= show.image_url %>" alt="<%= show.title %> art.">
-            <p><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
+            <p class="title-label"><a href="/anime/<%=show.mal_id %>"><%= show.title %></a></p>
         </article>
     <% }) %>
 </section>

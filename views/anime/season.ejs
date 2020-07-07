@@ -1,14 +1,14 @@
 <section class="sub-nav">
     <section class="sub-nav-left">
-        <h2><%= season %> <%= year %></h2>
+        <h3><%= season %> <%= year %></h3>
     </section>
 </section>
 
-<section class="season-container">
+<section class="list-container">
     <% anime.forEach(anime => { %>
-        <section class="season-entry">
+        <section class="list-entry">
         <img src="<%= anime.image_url %>" alt="<%= anime.title %> art.">
-        <p class="season-title"><%= anime.title %></p>
+        <p class="list-title"><%= anime.title %></p>
         <p><%= anime.synopsis.slice(0, 144) %>... <a href="/anime/<%= anime.mal_id %>">Read More</a></p>
         </section>
     <% }) %>

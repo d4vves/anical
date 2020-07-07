@@ -70,7 +70,7 @@ a {
     font-size: 0.8em;
 }
 
-.sub-nav h4 {
+.sub-nav h3 {
     margin: 0;
 }
 
@@ -87,7 +87,7 @@ a {
 }
 
 .list-row {
-    height: 45vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
@@ -131,17 +131,18 @@ a {
     font-weight: 700;
 }
 
-.season-container {
+.list-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.season-entry {
+.list-entry {
     width: 20vw;
+    margin-bottom: 5vh;
 }
 
-.season-title {
+.list-title {
     margin-top: 0;
     padding: 1vh 0;
     background-color: #fb4d3d;
@@ -153,14 +154,21 @@ a {
     color: #ffffff;
 }
 
-.season-entry img {
+.list-entry img {
     width: 100%;
 }
 
-.season-entry h4 {
+.list-entry h4 {
     background-color: #fb4d3d;
     margin: 0;
     height: 5vh;
+}
+
+.show-container {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 0.9em;
 }
 
 .prompt-container {
@@ -177,6 +185,7 @@ a {
     text-align: center;
     padding: 0 2vw;
     font-size: 0.9em;
+    margin-bottom: 2vh;
 }
 
 .prompt-item p {
@@ -197,7 +206,7 @@ a {
 
 .calendar-container {
     border: 2px solid black;
-    border-radius: 2em;
+    border-radius: 1em;
     display: flex;
 }
 
@@ -212,6 +221,9 @@ a {
 
 .calendar-column h3 {
     text-align: center;
+    background-color: #fb4d3d;
+    color: #ffffff;
+    padding: 1vh 0;
 }
 
 .calendar-column img {
