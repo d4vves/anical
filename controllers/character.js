@@ -27,14 +27,19 @@ router.post('/', (req, res) => {
 })
 
 router.get('/search', (req, res) => {
-    axios.get(`https://api.jikan.moe/v3/search/character?q=${req.query.name}`)
-    .then(response => {
-        let promptId = req.query.promptId
-        let characters = response.data.results
-        res.render('character/characters', { characters, promptId })
-    }).catch(err => {
-        console.log(`🚦 ${err} 🚦`)
-    })
+    if (!req.query.name) {
+        req.flash('error', `Please enter a character name.`)
+        res.redirect('/profile/edit')
+    } else {
+        axios.get(`https://api.jikan.moe/v3/search/character?q=${req.query.name}`)
+        .then(response => {
+            let promptId = req.query.promptId
+            let characters = response.data.results
+            res.render('character/characters', { characters, promptId })
+        }).catch(err => {
+            console.log(`🚦 ${err} 🚦`)
+        })
+    }
 })
 
 module.exports = router

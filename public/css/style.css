@@ -28,6 +28,12 @@ a {
     padding-top: 0.5vh;
 }
 
+.error {
+    font-size: 0.9em;
+    color: #fb4d3d;
+    font-style: italic;
+}
+
 .nav-top {
     height: 8vh;
     display: flex;

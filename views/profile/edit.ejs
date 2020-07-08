@@ -31,6 +31,7 @@
                     <input class="black" type="text" name="name">
                     <input hidden type="text" name="promptId" value="<%= prompt.id %>">
                     <input type="submit" value="Add Character">
+                    <%- include('../partials/alerts') %>
                 </form>
                 <form method="POST" action="/prompt/<%= prompt.id %>/?_method=DELETE">
                     <input type="submit" value="Remove Prompt">
