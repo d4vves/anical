@@ -12,20 +12,20 @@
     <form method="POST" action="/prompt">
         <select name="text" id="text">
             <option default>Select a prompt</option>
-            <option value="If I were stranded on a deserted island, I'd want to be stranded with">If I were stranded on a deserted island, I'd want to be stranded with...</option>
-            <option value="If I were starting a band, I'd want our front-person to be">If I were starting a band, I'd want our front-person to be...</option>
-            <option value="If we were picking teams in gym class, my first pick would be">If we were picking teams in gym class, my first pick would be...</option>
-            <option value="If I were getting married, my best man / maid of honor would be">If I were getting married, my best man / maid of honor would be</option>
-            <option value="If they were running for president, I would vote for">If they were running for president, I would vote for</option>
-            <option value="My waifu / husbando is...">My waifu / husbando is...</option>
-            <option value="If the apocalypse began, I'd stick by">If the apocalypse began, I'd stick by</option>
+            <option class="prompt-option" value="If I were stranded on a deserted island, I'd want to be stranded with">If I were stranded on a deserted island, I'd want to be stranded with...</option>
+            <option class="prompt-option" value="If I were starting a band, I'd want our front-person to be">If I were starting a band, I'd want our front-person to be...</option>
+            <option class="prompt-option" value="If we were picking teams in gym class, my first pick would be">If we were picking teams in gym class, my first pick would be...</option>
+            <option class="prompt-option" value="If I were getting married, my best man / maid of honor would be">If I were getting married, my best man / maid of honor would be...</option>
+            <option class="prompt-option" value="If they were running for president, I would vote for">If they were running for president, I would vote for...</option>
+            <option class="prompt-option" value="My waifu / husbando is">My waifu / husbando is...</option>
+            <option class="prompt-option" value="If the apocalypse began, I'd stick by">If the apocalypse began, I'd stick by...</option>
         </select>
         <input type="submit" value="Add prompt">
     </form>
     <section class="prompt-container">
         <% prompts.forEach(prompt => { %>
             <section class="prompt-item">
-                <p><%= prompt.text %>...</p>
+                <p class="prompt-text"><%= prompt.text %>...</p>
             <% if (!prompt.characterId) { %>
                 <form method="GET" action="/character/search">
                     <input class="black" type="text" name="name">
@@ -133,3 +133,29 @@
         <% }) %>
     </section>
 </section>
+
+<script>
+    let promptOptions = document.getElementsByClassName('prompt-option')
+    let promptTexts = document.getElementsByClassName('prompt-text')
+
+    let optionsArray = Array.from(promptOptions).map(prompt => {
+        return prompt
+    })
+
+    let textsArray = Array.from(promptTexts).map(text => {
+        return text
+    })
+
+    // console.log(optionsArray)
+    // console.log(textsArray)
+
+    textsArray.forEach(text => {
+        optionsArray.forEach(option => {
+            if (option.textContent == text.textContent) {
+                console.log(`🤡`)
+                option.style.display = 'none'
+            }
+        })
+    })
+</script>
+
