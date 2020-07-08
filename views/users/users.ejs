@@ -6,6 +6,11 @@
     </section>
 </section>
 
-<% users.forEach(user => { %>
-    <p><a href="/users/<%= user.id %>"><%= user.name %></a></p>
-<% }) %>
+<section class="user-container">
+    <% users.forEach(user => { %>
+        <section class="user-item">
+            <p class="user-name"><a href="/users/<%= user.id %>"><%= user.name %></a></p>
+            <p class="smaller no-margin">User Since: <%= user.createdAt.toString().slice(0, 10) %></p>
+        </section>
+    <% }) %>
+</section>

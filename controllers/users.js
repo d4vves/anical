@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
             ]
         }
     }).then(users => {
-        console.log(`🤡 ${users}`)
         res.render('users/users', { users })
     })
 })

@@ -28,6 +28,10 @@ a {
     padding-top: 0.5vh;
 }
 
+.no-margin {
+    margin: 0;
+}
+
 .error {
     font-size: 0.9em;
     color: #fb4d3d;
@@ -197,7 +201,7 @@ a {
 
 .prompt-item {
     height: 75%;
-    flex-basis: 20%;
+    flex-basis: 25%;
     text-align: center;
     padding: 0 2vw;
     font-size: 0.9em;
@@ -213,7 +217,8 @@ a {
     font-weight: 700;
     background-color: #fb4d3d;
     color: #ffffff;
-    margin: 0;
+    margin: 0 auto;
+    width: 50%;
 }
 
 .prompt-image {
@@ -274,4 +279,24 @@ footer {
     justify-content: center;
     align-items: center;
     margin-top: 10vh;
+}
+
+.user-container {
+    display: flex;
+}
+
+.user-item {
+    width: 20vw;
+    text-align: center;
+}
+
+.user-name {
+    margin: 0;
+}
+
+.user-name a {
+    margin: 0;
+    color: #ffffff;
+    background-color: #fb4d3d;
+    padding: 0 3vw;
 }
