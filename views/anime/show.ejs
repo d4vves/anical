@@ -4,7 +4,7 @@
         <p><%= engTitle %></p>
     </section>
     <section class="sub-nav-right">
-        <p><a href="<%= backUrl %>">back to results</a></p>
+        <p><a href="<%= backUrl %>">back</a></p>
     </section>
 </section>
 
@@ -15,7 +15,6 @@
 <% } %>
 <p>Source: <%= source %></p>
 <p><%= synopsis %></p>
-
 <% if (currentUser) { %>
     <% if (animes.length === 0) { %>
         <form method="POST" action="/anime/<%= malId %>">

@@ -29,34 +29,48 @@ router.get('/:id', (req, res) => {
     .then((response) => {
         let resData = response.data
         let backUrl = req.header('Referer')
-        db.user.findOne({
-            where: {
-                id: req.user.id
-            }
-        }).then(user => {
-            user.getAnimes({
+        if (!req.user) {
+            res.render('anime/show', {
+                name: resData.title,
+                image: resData.image_url,
+                airs: resData.broadcast,
+                synopsis: resData.synopsis,
+                engTitle: resData.title_english,
+                malId: resData.mal_id,
+                source: resData.source,
+                airing: resData.aired.to,
+                backUrl
+            })
+        } else {
+            db.user.findOne({
                 where: {
-                    malId: req.params.id
+                    id: req.user.id
                 }
-            }).then(animes => {
-                res.render('anime/show', {
-                    name: resData.title,
-                    image: resData.image_url,
-                    airs: resData.broadcast,
-                    synopsis: resData.synopsis,
-                    engTitle: resData.title_english,
-                    malId: resData.mal_id,
-                    source: resData.source,
-                    airing: resData.aired.to,
-                    animes,
-                    backUrl
+            }).then(user => {
+                user.getAnimes({
+                    where: {
+                        malId: req.params.id
+                    }
+                }).then(animes => {
+                    res.render('anime/show', {
+                        name: resData.title,
+                        image: resData.image_url,
+                        airs: resData.broadcast,
+                        synopsis: resData.synopsis,
+                        engTitle: resData.title_english,
+                        malId: resData.mal_id,
+                        source: resData.source,
+                        airing: resData.aired.to,
+                        animes,
+                        backUrl
+                    })
+                }).catch(err => {
+                    console.log(`🚦 ${err} 🚦`)
                 })
             }).catch(err => {
                 console.log(`🚦 ${err} 🚦`)
             })
-        }).catch(err => {
-            console.log(`🚦 ${err} 🚦`)
-        })
+        }
     }).catch(err => {
         console.log(`🚦 ${err} 🚦`)
     })
