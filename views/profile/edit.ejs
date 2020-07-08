@@ -47,6 +47,7 @@
         <% }) %>
     </section>
 </section>
+
 <h3>My Cal</h3>
 <section class="calendar-container">
     <section class="calendar-column">
@@ -135,6 +136,7 @@
 </section>
 
 <script>
+
     let promptOptions = document.getElementsByClassName('prompt-option')
     let promptTexts = document.getElementsByClassName('prompt-text')
 
@@ -146,16 +148,13 @@
         return text
     })
 
-    // console.log(optionsArray)
-    // console.log(textsArray)
-
     textsArray.forEach(text => {
         optionsArray.forEach(option => {
             if (option.textContent == text.textContent) {
-                console.log(`🤡`)
                 option.style.display = 'none'
             }
         })
     })
+
 </script>
 

@@ -1,0 +1,11 @@
+<section class="sub-nav">
+    <section class="sub-nav-left">
+        <h3>Find Users</h3>
+    </section>
+    <section class="sub-nav-right">
+    </section>
+</section>
+
+<% users.forEach(user => { %>
+    <p><a href="/users/<%= user.id %>"><%= user.name %></a></p>
+<% }) %>

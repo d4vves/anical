@@ -69,6 +69,7 @@ app.use('/anime', require('./controllers/anime'))
 app.use('/profile', require('./controllers/profile'))
 app.use('/prompt', require('./controllers/prompt'))
 app.use('/character', require('./controllers/character'))
+app.use('/users', require('./controllers/users'))
 
 /*----- Initialize app on Port -----*/
 app.listen(process.env.PORT || 3000, () => {

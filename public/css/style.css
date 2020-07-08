@@ -46,18 +46,18 @@ a {
 
 .nav-top-left {
     font-size: 1.5em;
-    width: 65%;
+    width: 55%;
 }
 
 .nav-top-right {
-    width: 35%;
+    width: 45%;
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
 }
 
 .nav-top-right a {
-    margin-left: 5vw;
+    margin-left: 3vw;
     background-color: #fb4d3d;
     color: #ffffff;
     padding: 0.25em;
