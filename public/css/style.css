@@ -100,6 +100,8 @@ a {
 
 .sub-nav-left {
     margin-left: 1vw;
+    display: flex;
+    align-items: center;
 }
 
 .sub-nav-right {
@@ -189,6 +191,12 @@ a {
     width: 60%;
     margin: 0 auto;
     font-size: 0.9em;
+}
+
+.profile-picture {
+    height: 10vh;
+    display: inline-block;
+    margin-right: 2vw;
 }
 
 .prompt-container {

@@ -1,11 +1,15 @@
 <section class="sub-nav">
     <section class="sub-nav-left">
-        <h3><%= currentUser.name %></h3>
-        <p>Scheduling Since: <%= currentUser.createdAt.toString().slice(0, 10) %></p>
+        <% if (currentUser.imageurl) { %>
+            <img class="profile-picture" src="<%= currentUser.imageurl %>">
+        <% } %>
+        <section class="info-block">
+            <h3><%= currentUser.name %></h3>
+            <p>Scheduling Since: <%= currentUser.createdAt.toString().slice(0, 10) %></p>
+        </section>
     </section>
     <section class="sub-nav-right">
         <p><a href="/profile/edit">edit profile</a></p>
-        <p><a href="/users">find other users</a> </p>
     </section>
 </section>
 

@@ -1,7 +1,19 @@
 <section class="sub-nav">
     <section class="sub-nav-left">
-        <h3><%= currentUser.name %></h3>
-        <p>Scheduling Since: <%= currentUser.createdAt.toString().slice(0, 10) %></p>
+        <% if (currentUser.imageurl) { %>
+            <img class="profile-picture" src="<%= currentUser.imageurl %>">
+        <% } %>
+        <section class="info-block">
+            <h3><%= currentUser.name %></h3>
+            <p>Scheduling Since: <%= currentUser.createdAt.toString().slice(0, 10) %></p>
+            <form method="GET" action="/character/search">
+                <label class="smaller" for="name">Update profile picture:</label>
+                <input class="black" type="text" name="name" id="name">
+                <input hidden type="text" name="userId" value="<%= currentUser.id %>">
+                <input type="submit" value="Search Character Portraits">
+                <%- include('../partials/alerts') %>
+            </form>
+        </section>
     </section>
     <section class="sub-nav-right">
         <p><a href="/profile">save profile</a></p>
@@ -68,7 +80,8 @@
             <% if (anime.date.includes('Tuesday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <p><%= anime.date %></p>
+                    <p class="smaller"><%= anime.date %></p>
+                    <p class="smaller">Airing <%= anime.airdate %></p>
                 </article>
             <% } %>
         <% }) %>
@@ -80,7 +93,8 @@
             <% if (anime.date.includes('Wednesday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <p><%= anime.date %></p>
+                    <p class="smaller"><%= anime.date %></p>
+                    <p class="smaller">Airing <%= anime.airdate %></p>
                 </article>
             <% } %>
         <% }) %>
@@ -92,7 +106,8 @@
             <% if (anime.date.includes('Thursday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <p><%= anime.date %></p>
+                    <p class="smaller"><%= anime.date %></p>
+                    <p class="smaller">Airing <%= anime.airdate %></p>
                 </article>
             <% } %>
         <% }) %>
@@ -104,7 +119,8 @@
             <% if (anime.date.includes('Friday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <p><%= anime.date %></p>
+                    <p class="smaller"><%= anime.date %></p>
+                    <p class="smaller">Airing <%= anime.airdate %></p>
                 </article>
             <% } %>
         <% }) %>
@@ -116,7 +132,8 @@
             <% if (anime.date.includes('Saturday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <p><%= anime.date %></p>
+                    <p class="smaller"><%= anime.date %></p>
+                    <p class="smaller">Airing <%= anime.airdate %></p>
                 </article>
             <% } %>
         <% }) %>
@@ -128,7 +145,8 @@
             <% if (anime.date.includes('Sunday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
-                    <p><%= anime.date %></p>
+                    <p class="smaller"><%= anime.date %></p>
+                    <p class="smaller">Airing <%= anime.airdate %></p>
                 </article>
             <% } %>
         <% }) %>
