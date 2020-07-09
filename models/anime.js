@@ -3,6 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   const anime = sequelize.define('anime', {
     name: DataTypes.STRING,
     date: DataTypes.STRING,
+    airdate: DataTypes.STRING,
+    caldate: DataTypes.STRING,
     imageurl: DataTypes.STRING,
     malId: DataTypes.INTEGER
   }, {});

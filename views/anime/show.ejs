@@ -20,6 +20,8 @@
         <form method="POST" action="/anime/<%= malId %>">
             <input hidden type="text" name="name" value="<%= name %>">
             <input hidden type="text" name="date" value="<%= airs %>">
+            <input hidden type="text" name="caldate" value="<%= caldate %>">
+            <input hidden type="text" name="airdate" value="<%= airdate %>">
             <input hidden type="text" name="imageurl" value="<%= image %>">
             <input hidden type="number" name="malId" value="<%= malId %>">
             <input type="submit" value="Add Show">

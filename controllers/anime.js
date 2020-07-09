@@ -38,6 +38,8 @@ router.get('/:id', (req, res) => {
                 engTitle: resData.title_english,
                 malId: resData.mal_id,
                 source: resData.source,
+                caldate: resData.aired.from,
+                airdate: resData.aired.string,
                 airing: resData.aired.to,
                 backUrl
             })
@@ -60,6 +62,8 @@ router.get('/:id', (req, res) => {
                         engTitle: resData.title_english,
                         malId: resData.mal_id,
                         source: resData.source,
+                        caldate: resData.aired.from,
+                        airdate: resData.aired.string,
                         airing: resData.aired.to,
                         animes,
                         backUrl
@@ -89,6 +93,8 @@ router.post('/:id', (req, res) => {
             defaults: {
                 name: req.body.name,
                 date: req.body.date,
+                airdate: req.body.airdate,
+                caldate: req.body.caldate,
                 imageurl: req.body.imageurl,
                 userId: req.user.id
             }

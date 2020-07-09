@@ -14,6 +14,12 @@ module.exports = {
       date: {
         type: Sequelize.STRING
       },
+      airdate: {
+        type: Sequelize.STRING
+      },
+      caldate: {
+        type: Sequelize.STRING
+      },
       imageurl: {
         type: Sequelize.STRING
       },
