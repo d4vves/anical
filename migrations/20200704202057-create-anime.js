@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       caldate: {
-        type: Sequelize.STRING
+        type: Sequelize.DATE
       },
       imageurl: {
         type: Sequelize.STRING
