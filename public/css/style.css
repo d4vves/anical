@@ -2,6 +2,7 @@ body {
     font-family: 'Lato', sans-serif;
     width: 90vw;
     margin: 0 auto;
+    background-color: #fffded;
 }
 
 select, input {
@@ -278,17 +279,6 @@ form p {
     padding-top: 1vh;
 }
 
-footer {
-    background-color: #fb4d3d;
-    color: #ffffff;
-    height: 10vh;
-    font-size: 0.8em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10vh;
-}
-
 .user-container {
     display: flex;
 }
@@ -307,4 +297,20 @@ footer {
     color: #ffffff;
     background-color: #fb4d3d;
     padding: 0 3vw;
+}
+
+footer {
+    background-color: #fb4d3d;
+    color: #ffffff;
+    height: 10vh;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+footer a {
+    color: #ffffff;
 }
