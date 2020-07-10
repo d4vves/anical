@@ -1,6 +1,7 @@
 # Ani Cal
+[https://ani-cal.herokuapp.com/](https://ani-cal.herokuapp.com/)
 
-// screen shot //
+![Screenshot](public/img/screenshot.png)
 
 ## Description
 Ani Cal is a full stack web app designed to help users get their schedules for the upcoming anime seasons in order. As a user I can: 
@@ -33,8 +34,14 @@ I wanted to include various ways of including a community aspect in my app. At a
 [Twitter](https://developer.twitter.com/en/docs)
 
 ### Wireframes
+![Wireframe 1](public/img/wire1.png)
+![Wireframe 2](public/img/wire2.png)
 
 ## ERD
+![ERD](public/img/erd.png)
 
 ## Technologies Used
 - HTML, CSS, JavaScript, Node.js, Sequelize.
+
+## Dependencies
+Axios, bcrypt, connect-flash, connect-session-sequelize, dotenv, ejs, express, express-ejs-layouts, express-session, flash, helmet, method-override, morgan, passport, passport-local, pg, sequelize, sequelize-cli.
