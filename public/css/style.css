@@ -281,6 +281,7 @@ form p {
 
 .user-container {
     display: flex;
+    height: 30vh;
 }
 
 .user-item {
@@ -297,6 +298,10 @@ form p {
     color: #ffffff;
     background-color: #fb4d3d;
     padding: 0 3vw;
+}
+
+.user-item img {
+    height: 50%;
 }
 
 footer {

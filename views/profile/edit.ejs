@@ -1,3 +1,4 @@
+<%- include('../partials/alerts') %>
 <section class="sub-nav">
     <section class="sub-nav-left">
         <% if (currentUser.imageurl) { %>
@@ -11,7 +12,6 @@
                 <input class="black" type="text" name="name" id="name">
                 <input hidden type="text" name="userId" value="<%= currentUser.id %>">
                 <input type="submit" value="Search Character Portraits">
-                <%- include('../partials/alerts') %>
             </form>
         </section>
     </section>
