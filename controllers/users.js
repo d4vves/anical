@@ -12,6 +12,8 @@ router.get('/', (req, res) => {
         }
     }).then(users => {
         res.render('users/users', { users })
+    }).catch(err => {
+        console.log(`🚦 ${err} 🚦`)
     })
 })
 
@@ -35,11 +37,23 @@ router.get('/:id', (req, res) => {
                             profile,
                             profileAnimes,
                             prompts
+                        }).catch(err => {
+                            console.log(`🚦 ${err} 🚦`)
                         })
+                    }).catch(err => {
+                        console.log(`🚦 ${err} 🚦`)
                     })
+                }).catch(err => {
+                    console.log(`🚦 ${err} 🚦`)
                 })
+            }).catch(err => {
+                console.log(`🚦 ${err} 🚦`)
             })
+        }).catch(err => {
+            console.log(`🚦 ${err} 🚦`)
         })
+    }).catch(err => {
+        console.log(`🚦 ${err} 🚦`)
     })
 })
 
