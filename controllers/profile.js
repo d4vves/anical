@@ -11,7 +11,9 @@ router.get('/', isLoggedIn, (req, res) => {
             id: req.user.id
         }
     }).then(user => {
-        user.getAnimes().then(animes => {
+        user.getAnimes({
+            order: ['date']
+        }).then(animes => {
             user.getPrompts({
                 order: ['id'],
                 include: [db.character]
