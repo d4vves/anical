@@ -1,11 +1,20 @@
 <section class="sub-nav">
     <section class="sub-nav-left">
-        <% if (user.imageurl) { %>
-            <img class="profile-picture" src="<%= user.imageurl %>">
+        <% if (profile.imageurl) { %>
+            <img class="profile-picture" src="<%= profile.imageurl %>">
         <% } %>
         <section class="info-block">
-            <h3><%= user.name %></h3>
-            <p>Scheduling Since: <%= user.createdAt.toString().slice(0, 10) %></p>
+            <h3><%= profile.name %></h3>
+            <p>Scheduling Since: <%= profile.createdAt.toString().slice(0, 10) %></p>
+            <% let match = 0 %>
+            <% viewerAnimes.forEach(viewerAnime => { %>
+                <% profileAnimes.forEach(profileAnime => { %>
+                    <% if (viewerAnime.dataValues.id === profileAnime.dataValues.id) { %>
+                        <% match++ %>
+                    <% } %>
+                <% }) %>
+            <% }) %>
+            <p><%= match %> anime in common.</p>
         </section>
     </section>
     <section class="sub-nav-right">
@@ -30,7 +39,7 @@
 <section class="calendar-container">
     <section class="calendar-column">
         <h3>MON</h3>
-        <% animes.forEach(anime => { %>
+        <% profileAnimes.forEach(anime => { %>
             <% if (anime.date.includes('Monday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
@@ -42,7 +51,7 @@
 
     <section class="calendar-column">
         <h3>TUE</h3>
-        <% animes.forEach(anime => { %>
+        <% profileAnimes.forEach(anime => { %>
             <% if (anime.date.includes('Tuesday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
@@ -54,7 +63,7 @@
 
     <section class="calendar-column">
         <h3>WED</h3>
-        <% animes.forEach(anime => { %>
+        <% profileAnimes.forEach(anime => { %>
             <% if (anime.date.includes('Wednesday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
@@ -66,7 +75,7 @@
 
     <section class="calendar-column">
         <h3>THU</h3>
-        <% animes.forEach(anime => { %>
+        <% profileAnimes.forEach(anime => { %>
             <% if (anime.date.includes('Thursday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
@@ -78,7 +87,7 @@
 
     <section class="calendar-column">
         <h3>FRI</h3>
-        <% animes.forEach(anime => { %>
+        <% profileAnimes.forEach(anime => { %>
             <% if (anime.date.includes('Friday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
@@ -90,7 +99,7 @@
 
     <section class="calendar-column">
         <h3>SAT</h3>
-        <% animes.forEach(anime => { %>
+        <% profileAnimes.forEach(anime => { %>
             <% if (anime.date.includes('Saturday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>
@@ -102,7 +111,7 @@
 
     <section class="calendar-column">
         <h3>SUN</h3>
-        <% animes.forEach(anime => { %>
+        <% profileAnimes.forEach(anime => { %>
             <% if (anime.date.includes('Sunday')) { %>
                 <article class="calendar-column-item">
                     <p><a href="/anime/<%= anime.malId %>"><%= anime.name %></a></p>

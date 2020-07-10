@@ -18,12 +18,26 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     db.user.findOne({
         where: {
-            id: req.params.id
+            id: req.user.id
         }
-    }).then(user => {
-        user.getAnimes().then(animes => {
-            user.getPrompts({include: [db.character]}).then(prompts => {
-                res.render('users/show', { animes, prompts, user })
+    }).then(viewer => {
+        viewer.getAnimes().then(viewerAnimes => {
+            db.user.findOne({
+                where: {
+                    id: req.params.id
+                }
+            }).then(profile => {
+                profile.getAnimes().then(profileAnimes => {
+                    profile.getPrompts({include: [db.character]}).then(prompts => {
+                        res.render('users/show', {
+                            viewer,
+                            viewerAnimes,
+                            profile,
+                            profileAnimes,
+                            prompts
+                        })
+                    })
+                })
             })
         })
     })
