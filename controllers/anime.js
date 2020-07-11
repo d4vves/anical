@@ -29,7 +29,7 @@ router.get('/season', (req,res) => {
     } else {
         axios.get(`https://api.jikan.moe/v3/season/${req.query.year}/${req.query.season}`)
         .then((response) => {
-            let resData = response.data.results
+            let resData = response.data
             res.render('anime/season', {
                 season: resData.season_name,
                 year: resData.season_year,
