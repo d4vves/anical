@@ -1,0 +1,18 @@
+<section class="sub-nav">
+    <section class="sub-nav-left">
+        <h3>Results For: <%= search %></h3>
+    </section>
+    <section class="sub-nav-right">
+        <p><a href="/">back</a></p>
+    </section>
+</section>
+
+<section class="list-container">
+    <% anime.forEach(anime => { %>
+        <section class="list-entry">
+            <img src="<%= anime.image_url %>" alt="<%= anime.title %>">
+            <p class="list-title"><%= anime.title %></p>
+            <p><%= anime.synopsis.slice(0, 144) %>... <a href="/anime/<%= anime.mal_id %>">Read More</a></p>
+        </section>
+    <% }) %>
+</section>

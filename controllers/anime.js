@@ -5,6 +5,23 @@ const axios = require('axios')
 const methodOverride = require('method-override')
 router.use(methodOverride('_method'))
 
+router.get('/search', (req, res) => {
+    if(!req.query.name) {
+        req.flash('error', 'Please enter a valid title.')
+        return res.redirect('/')
+    } else {
+        axios.get(`https://api.jikan.moe/v3/search/anime?q=${req.query.name}`)
+        .then(response => {
+            let anime = response.data.results
+            let search = req.query.name
+            console.log(`🤡 ${anime}`)
+            res.render('anime/anime', { anime, search })
+        }).catch(err => {
+            console.log(`🚦 ${err} 🚦`)
+        })
+    }
+})
+
 router.get('/season', (req,res) => {
     if (!req.query.year) {
         req.flash('error', 'Please enter a valid year.')
@@ -12,7 +29,7 @@ router.get('/season', (req,res) => {
     } else {
         axios.get(`https://api.jikan.moe/v3/season/${req.query.year}/${req.query.season}`)
         .then((response) => {
-            let resData = response.data
+            let resData = response.data.results
             res.render('anime/season', {
                 season: resData.season_name,
                 year: resData.season_year,

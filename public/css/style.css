@@ -107,6 +107,11 @@ a {
 
 .sub-nav-right {
     margin-right: 1vw;
+    display: flex;
+}
+
+.sub-nav-content {
+    padding-right: 1vw;
 }
 
 .list-row {

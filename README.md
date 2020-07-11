@@ -27,11 +27,10 @@ At a base level I wanted a user to be able to login or register for an account a
 - - As an anime enthusiast myself I've always felt that profile pages on all the different listing sites are a bit bland. They'll allow you to add a profile picture and they serve up a section where you can write a bio about yourself. But I felt like I wanted to allow users to better portray themselves non-verbally by having the ability to choose from a list of pre-written prompts and then answer that prompt by selecting a character that you will search the API for. For instance a user could select the prompt "if I were stranded on a deserted island, I'd want to be stranded with" and then search for a character that they'd want to be stranded on a deserted island with. How fun!
 
 - Community
-- - I wanted to include various ways of including a community aspect in my app. At a very base level, I wanted users to be able to view other users profiles to see their schedule, prompts and if they have any anime in common. From there I decided that I would like to include a second API. By querying the Twitter API we can now get a Twitter feed loaded on a view page of an individual anime and see what other fans are saying about that show!
+- - I wanted to include various ways of including a community aspect in my app. At a very base level, I wanted users to be able to view other users profiles to see their schedule, prompts and if they have any anime in common.
 
 ### APIs Used
 - [Jikan](https://jikan.moe/)
-- [Twitter](https://developer.twitter.com/en/docs)
 
 ### Wireframes
 ![Wireframe 1](public/img/wire1.png)

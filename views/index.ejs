@@ -1,11 +1,20 @@
+<%- include('./partials/alerts') %>
 <section class="sub-nav">
     <section class="sub-nav-left">
         <h3>Upcoming Anime</h3>
     </section>
 
     <section class="sub-nav-right">
-        <p>Search By Season</p>
-        <form action="/anime/season" method="GET">
+        <section class="sub-nav-content">
+            <p>Search By Title</p>
+            <form action="/anime/search" method="GET">
+            <input class="black" type="text" name="name">
+            <input type="submit" value="Search">
+        </form>
+        </section>
+        <section class="sub-nav-content">
+            <p>Search By Season</p>
+            <form action="/anime/season" method="GET">
             <select name="year" id="year">
                 <option value="2020">2020</option>
                 <option value="2021">2021</option>
@@ -18,6 +27,7 @@
             </select>
             <input type="submit" value="Search">
         </form>
+        </section>
     </section>
 </section>
 
