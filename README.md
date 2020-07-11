@@ -29,15 +29,15 @@ At a base level I wanted a user to be able to login or register for an account a
 - Community
 - - I wanted to include various ways of including a community aspect in my app. At a very base level, I wanted users to be able to view other users profiles to see their schedule, prompts and if they have any anime in common.
 
-### APIs Used
-- [Jikan](https://jikan.moe/)
-
 ### Wireframes
 ![Wireframe 1](public/img/wire1.png)
 ![Wireframe 2](public/img/wire2.png)
 
 ## ERD
 ![ERD](public/img/erd.png)
+
+## APIs Used
+- [Jikan](https://jikan.moe/)
 
 ## Technologies Used
 - HTML, CSS, JavaScript, Node.js, Sequelize.

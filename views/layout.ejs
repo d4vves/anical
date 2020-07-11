@@ -8,26 +8,22 @@
     <title>Ani Cal</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <section class="nav-top">
-                <article class="nav-top-left">
-                    <h1><a href="/"><span class="black">ANI CAL</span> // GET YOUR SEASON TOGETHER</a></h1>
-                </article>
-                <article class="nav-top-right">
-                    <% if (currentUser) { %>
-                        <a href="/">DISCOVER</a>
-                        <a href="/profile">MY CAL</a>
-                        <a href="/users">FIND USERS</a>
-                        <a href="/auth/logout">LOGOUT</a>
-                    <% } else { %>
-                        <a href="/auth/register">REGISTER</a>
-                        <a href="/auth/login">LOGIN</a>
-                    <% } %>
-                </article>
-            </section>
-        </nav>
-    </header>
+    <nav>
+        <article class="nav-top-left">
+            <h1><a href="/"><span class="black">ANI CAL</span> // GET YOUR SEASON TOGETHER</a></h1>
+        </article>
+        <article class="nav-top-right">
+            <% if (currentUser) { %>
+                <a href="/">DISCOVER</a>
+                <a href="/profile">MY CAL</a>
+                <a href="/users">FIND USERS</a>
+                <a href="/auth/logout">LOGOUT</a>
+            <% } else { %>
+                <a href="/auth/register">REGISTER</a>
+                <a href="/auth/login">LOGIN</a>
+            <% } %>
+        </article>
+    </nav>
     <main>
         <%- body %>
     </main>
