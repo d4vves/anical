@@ -29,6 +29,9 @@ At a base level I wanted a user to be able to login or register for an account a
 - Community
 - - I wanted to include various ways of including a community aspect in my app. At a very base level, I wanted users to be able to view other users profiles to see their schedule, prompts and if they have any anime in common.
 
+- Mobile
+- - I learned some new CSS properties to make my app not look so garbage-y on mobile devices.
+
 ### Wireframes
 ![Wireframe 1](public/img/wire1.png)
 ![Wireframe 2](public/img/wire2.png)

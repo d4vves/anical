@@ -14,7 +14,6 @@ router.get('/search', (req, res) => {
         .then(response => {
             let anime = response.data.results
             let search = req.query.name
-            console.log(`🤡 ${anime}`)
             res.render('anime/anime', { anime, search })
         }).catch(err => {
             console.log(`🚦 ${err} 🚦`)
