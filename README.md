@@ -43,7 +43,7 @@ At a base level I wanted a user to be able to login or register for an account a
 - [Jikan](https://jikan.moe/)
 
 ## Technologies Used
-- HTML, CSS, JavaScript, Node.js, Sequelize.
+- HTML, CSS, JavaScript, Node.js, Express.js, Sequelize, Postgres.
 
 ## Dependencies
 Axios, bcrypt, connect-flash, connect-session-sequelize, dotenv, ejs, express, express-ejs-layouts, express-session, flash, helmet, method-override, morgan, passport, passport-local, pg, sequelize, sequelize-cli.
