@@ -9,9 +9,9 @@
             <p>Scheduling Since: <%= currentUser.createdAt.toString().slice(0, 10) %></p>
             <form method="GET" action="/character/search">
                 <label class="smaller" for="name">Update profile picture:</label>
-                <input class="black" type="text" name="name" id="name">
+                <input class="input-field" type="text" name="name" id="name">
                 <input hidden type="text" name="userId" value="<%= currentUser.id %>">
-                <input type="submit" value="Search Character Portraits">
+                <input class="btn" type="submit" value="Search Character Portraits">
             </form>
         </section>
     </section>
@@ -22,7 +22,7 @@
 
 <section class="profile-info-container">
     <form method="POST" action="/prompt">
-        <select name="text" id="text">
+        <select class="input-field" name="text" id="text">
             <option default>Select a prompt</option>
             <option class="prompt-option" value="If I were stranded on a deserted island, I'd want to be stranded with">If I were stranded on a deserted island, I'd want to be stranded with...</option>
             <option class="prompt-option" value="If I were starting a band, I'd want our front-person to be">If I were starting a band, I'd want our front-person to be...</option>
@@ -32,7 +32,7 @@
             <option class="prompt-option" value="My waifu / husbando is">My waifu / husbando is...</option>
             <option class="prompt-option" value="If the apocalypse began, I'd stick by">If the apocalypse began, I'd stick by...</option>
         </select>
-        <input type="submit" value="Add prompt">
+        <input class="btn" type="submit" value="Add prompt">
     </form>
     <section class="prompt-container">
         <% prompts.forEach(prompt => { %>
@@ -40,19 +40,19 @@
                 <p class="prompt-text"><%= prompt.text %>...</p>
             <% if (!prompt.characterId) { %>
                 <form method="GET" action="/character/search">
-                    <input class="black" type="text" name="name">
+                    <input class="input-field" type="text" name="name">
                     <input hidden type="text" name="promptId" value="<%= prompt.id %>">
-                    <input type="submit" value="Add Character">
+                    <input class="btn" type="submit" value="Add Character">
                     <%- include('../partials/alerts') %>
                 </form>
                 <form method="POST" action="/prompt/<%= prompt.id %>/?_method=DELETE">
-                    <input type="submit" value="Remove Prompt">
+                    <input class="btn" type="submit" value="Remove Prompt">
                 </form>
             <% } else { %>
                 <img class="prompt-image" src="<%= prompt.character.imageurl %>" alt="<%= prompt.character.name %>">
                 <p><%= prompt.character.name %></p>
                 <form method="POST" action="/prompt/<%= prompt.id %>/?_method=DELETE">
-                    <input type="submit" value="Remove Prompt">
+                    <input class="btn" type="submit" value="Remove Prompt">
                 </form>
             <% } %>
             </section>

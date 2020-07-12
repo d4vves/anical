@@ -27,11 +27,11 @@
             <input hidden type="text" name="airdate" value="<%= airdate %>">
             <input hidden type="text" name="imageurl" value="<%= image %>">
             <input hidden type="number" name="malId" value="<%= malId %>">
-            <input type="submit" value="Add Show">
+            <input class="btn" type="submit" value="Add Show">
         </form>
     <% } else { %>
         <form method="POST" action="/anime/<%= malId %>/?_method=DELETE">
-            <input type="submit" value="Remove Show">
+            <input class="btn" type="submit" value="Remove Show">
         </form>
     <% } %>
 <% } %>

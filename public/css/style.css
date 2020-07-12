@@ -22,7 +22,7 @@ input:focus, select:focus {
 }
 
 .btn {
-    width: 7.5vmin;
+    width: fit-content;
     background-color: #ffffff;
     color: #fb4d3d;
     border: 1px solid #ffffff;
@@ -206,12 +206,12 @@ nav {
     text-align: center;
     width: 60%;
     margin: 0 auto;
-    font-size: 0.9em;
+    font-size: 1.5vmin;
 }
 
 /*----- PROFILE PAGE -----*/
 .profile-picture {
-    height: 10vh;
+    height: 8vh;
     display: inline-block;
     margin-right: 2vw;
 }
@@ -235,15 +235,17 @@ nav {
 
 .prompt-item p {
     font-style: italic;
+    font-size: 1.75vmin;
 }
 
 .prompt-item h4 {
+    width: 50%;
+    margin: 0 auto;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700;
+    font-size: calc(2px + 1.25vw);
     background-color: #fb4d3d;
     color: #ffffff;
-    margin: 0 auto;
-    width: 50%;
 }
 
 .prompt-image {
@@ -266,10 +268,11 @@ nav {
 }
 
 .calendar-column h3 {
+    padding: 1vh 0;
     text-align: center;
     background-color: #fb4d3d;
     color: #ffffff;
-    padding: 1vh 0;
+    font-size: calc(2px + 1.25vw);
 }
 
 .calendar-column img {
@@ -282,6 +285,7 @@ nav {
 
 .calendar-column-item p {
     margin: 0;
+    font-size: 1.75vmin;
 }
 
 .character-container {
