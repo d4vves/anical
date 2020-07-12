@@ -8,8 +8,8 @@ Ani Cal is a full stack web app designed to help users get their schedules for t
 - find upcoming anime or search for all the anime within a specific season.
 - register for an account or login to my existing account to add anime to my personal calendar.
 - spice up my profile by 
-- - adding pre-written prompt questions to my profile and answering said prompt by searching for a specific character.
-- - using a character portrait for my personal profile picture.
+    - adding pre-written prompt questions to my profile and answering said prompt by searching for a specific character.
+    - using a character portrait for my personal profile picture.
 - find other users and compare our schedules.
 
 Ani Cal is your solution to viewing your upcoming anime season schedule in a clear and concise manner!
@@ -24,10 +24,10 @@ At a base level I wanted a user to be able to login or register for an account a
 
 ### Stretch Goals
 - Better Profiling
-- - As an anime enthusiast myself I've always felt that profile pages on all the different listing sites are a bit bland. They'll allow you to add a profile picture and they serve up a section where you can write a bio about yourself. But I felt like I wanted to allow users to better portray themselves non-verbally by having the ability to choose from a list of pre-written prompts and then answer that prompt by selecting a character that you will search the API for. For instance a user could select the prompt "if I were stranded on a deserted island, I'd want to be stranded with" and then search for a character that they'd want to be stranded on a deserted island with. How fun!
+    - As an anime enthusiast myself I've always felt that profile pages on all the different listing sites are a bit bland. They'll allow you to add a profile picture and they serve up a section where you can write a bio about yourself. But I felt like I wanted to allow users to better portray themselves non-verbally by having the ability to choose from a list of pre-written prompts and then answer that prompt by selecting a character that you will search the API for. For instance a user could select the prompt "if I were stranded on a deserted island, I'd want to be stranded with" and then search for a character that they'd want to be stranded on a deserted island with. How fun!
 
 - Community
-- - I wanted to include various ways of including a community aspect in my app. At a very base level, I wanted users to be able to view other users profiles to see their schedule, prompts and if they have any anime in common.
+    - I wanted to include various ways of including a community aspect in my app. At a very base level, I wanted users to be able to view other users profiles to see their schedule, prompts and if they have any anime in common.
 
 - Mobile
 - - I learned some new CSS properties to make my app not look so garbage-y on mobile devices.

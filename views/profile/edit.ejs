@@ -8,7 +8,7 @@
             <h3><%= currentUser.name %></h3>
             <p>Scheduling Since: <%= currentUser.createdAt.toString().slice(0, 10) %></p>
             <form method="GET" action="/character/search">
-                <label class="smaller" for="name">Update profile picture:</label>
+                <label for="name">Update profile picture:</label>
                 <input class="input-field" type="text" name="name" id="name">
                 <input hidden type="text" name="userId" value="<%= currentUser.id %>">
                 <input class="btn" type="submit" value="Search Character Portraits">

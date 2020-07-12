@@ -10,10 +10,15 @@ input, select {
     width: 10vw;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700;
+    background-color: #ffffff;
 }
 
 input:focus, select:focus {
     outline-width: 0;
+}
+
+label {
+    font-size: 1.75vmin;
 }
 
 .input-field {
@@ -23,7 +28,6 @@ input:focus, select:focus {
 
 .btn {
     width: fit-content;
-    background-color: #ffffff;
     color: #fb4d3d;
     border: 1px solid #ffffff;
     font-size: 1.5vmin;
@@ -79,7 +83,7 @@ nav {
 /*----- SUB NAV -----*/
 
 .sub-nav {
-    height: 8vh;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -243,7 +247,7 @@ nav {
     margin: 0 auto;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700;
-    font-size: calc(2px + 1.25vw);
+    font-size: calc(2px + 1vw);
     background-color: #fb4d3d;
     color: #ffffff;
 }
@@ -312,6 +316,7 @@ form p {
 
 .user-name {
     margin: 0;
+    font-size: calc(2px + 1.25vw);
 }
 
 .user-name a {
@@ -325,6 +330,10 @@ form p {
     height: 50%;
 }
 
+.user-item p {
+    font-size: 1.75vmin;
+}
+
 /*----- FOOTER -----*/
 footer {
     background-color: #fb4d3d;
@@ -335,7 +344,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
 
 footer a {
