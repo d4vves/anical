@@ -18,7 +18,7 @@ input:focus, select:focus {
 }
 
 label {
-    font-size: 1.75vmin;
+    font-size: 1.5vmin;
 }
 
 .input-field {
@@ -165,7 +165,7 @@ nav {
 
 .list-row-entry a {
     color: #ffffff;
-    font-size: 1.75vmin;
+    font-size: 2vmin;
 }
 
 /*----- FLEX LISTS -----*/
@@ -188,7 +188,7 @@ nav {
     position: relative;
     text-align: center;
     color: #ffffff;
-    font-size: 1.75vmin;
+    font-size: 2vmin;
 }
 
 .list-entry img {
@@ -202,7 +202,7 @@ nav {
 }
 
 .list-entry p {
-    font-size: 1.75vmin;
+    font-size: 1.9vmin;
 }
 
 /*----- INDIVIDUAL SHOW PAGE -----*/
@@ -210,7 +210,7 @@ nav {
     text-align: center;
     width: 60%;
     margin: 0 auto;
-    font-size: 1.5vmin;
+    font-size: 1.9vmin;
 }
 
 /*----- PROFILE PAGE -----*/
@@ -239,7 +239,7 @@ nav {
 
 .prompt-item p {
     font-style: italic;
-    font-size: 1.75vmin;
+    font-size: 1.9vmin;
 }
 
 .prompt-item h4 {
@@ -289,7 +289,7 @@ nav {
 
 .calendar-column-item p {
     margin: 0;
-    font-size: 1.75vmin;
+    font-size: 1.9vmin;
 }
 
 .character-container {
@@ -331,7 +331,7 @@ form p {
 }
 
 .user-item p {
-    font-size: 1.75vmin;
+    font-size: 1.9vmin;
 }
 
 /*----- FOOTER -----*/
@@ -339,7 +339,7 @@ footer {
     background-color: #fb4d3d;
     color: #ffffff;
     height: 10vmin;
-    font-size: 1.75vmin;
+    font-size: 1.5vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
