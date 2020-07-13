@@ -37,7 +37,10 @@ router.get('/edit', isLoggedIn, (req, res) => {
         }
     }).then(user => {
         user.getAnimes().then(animes => {
-            user.getPrompts({include: [db.character]}).then(prompts => {
+            user.getPrompts({
+                order: ['id'],
+                include: [db.character]
+            }).then(prompts => {
                 res.render('profile/edit', { animes, prompts })
             })
         }).catch(err => {
