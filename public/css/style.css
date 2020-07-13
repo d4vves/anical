@@ -22,14 +22,14 @@ label {
 }
 
 .input-field {
-    border: 1px solid #ffffff;
+    border: 1px solid #fb4d3d;
     font-size: 1.5vmin;
 }
 
 .btn {
     width: fit-content;
     color: #fb4d3d;
-    border: 1px solid #ffffff;
+    border: 1px solid #fb4d3d;
     font-size: 1.5vmin;
 }
 
