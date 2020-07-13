@@ -17,12 +17,12 @@
                 <input hidden type="text" name="name" value="<%= character.name %>">
                 <input hidden type="text" name="imageurl" value="<%= character.image_url %>">
                 <input hidden type="text" name="promptId" value="<%= promptId %>">
-                <input type="submit" value="Add character">
+                <input class="btn" type="submit" value="Add character">
             </form>
         <% } else { %>
             <form method="POST" action="/profile/picture?_method=PUT">
                 <input hidden type="text" name="imageurl" value="<%= character.image_url %>">
-                <input type="submit" value="Use Portrait">
+                <input class="btn" type="submit" value="Use Portrait">
             </form>
         <% } %>
         </section>
