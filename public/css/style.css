@@ -96,7 +96,7 @@ nav {
     margin-left: 1vw;
     display: flex;
     align-items: center;
-    font-size: calc(2px + 1.25vw);
+    font-size: calc(2px + 1vw);
 }
 
 .sub-nav-right {
